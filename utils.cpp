@@ -9,3 +9,12 @@ void printVector(const vector<int> & vec){
     }
     cout << endl;
 }
+
+void print2dVector(const vector<vector<int>> & vec){
+    for (auto & row: vec){
+        for (auto & num: row){
+            cout << num << " ";
+        }
+        cout << endl;
+    }
+}
