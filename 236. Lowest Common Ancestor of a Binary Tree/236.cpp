@@ -2,6 +2,10 @@
 #include <iostream>
 using namespace std;
 
+/*
+g++ 236.cpp ../BinaryTree.cpp -std=c++17 -o 236
+*/
+
 TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
     if (root == nullptr || root == p || root == q){
         return root;
