@@ -3,6 +3,10 @@
 #include "../utils.h"
 using namespace std;
 
+/*
+g++ 238.cpp ../utils.cpp -std=c++17 -o 238 && ./238
+*/
+
 vector<int> productExceptSelf(vector<int>& nums) {
     vector<int> ans (nums.size(), 1);
     vector<int> prefix (nums.size(), 1);
