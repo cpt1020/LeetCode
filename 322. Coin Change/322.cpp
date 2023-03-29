@@ -2,6 +2,10 @@
 #include <vector>
 using namespace std;
 
+/*
+g++ 322.cpp -std=c++17 -o 322
+*/
+
 int coinChange(vector<int>& coins, int amount) {
     sort(coins.begin(), coins.end());
 
