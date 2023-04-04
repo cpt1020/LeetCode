@@ -3,6 +3,10 @@
 #include "../utils.h"
 using namespace std;
 
+/*
+g++ 39.cpp ../utils.cpp -std=c++17 -o 39 && ./39
+*/
+
 class Solution {
 public:
 
