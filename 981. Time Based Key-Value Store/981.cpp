@@ -3,6 +3,10 @@
 #include <iostream>
 using namespace std;
 
+/*
+g++ 981.cpp -std=c++17 -o 981 && ./981
+*/
+
 class TimeMap {
 private:
     unordered_map<string, map<int, string>> umap;
@@ -32,7 +36,6 @@ public:
         }
     }
 };
-
 
 int main() {
 
