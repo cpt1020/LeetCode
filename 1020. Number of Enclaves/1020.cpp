@@ -1,8 +1,9 @@
 #include <vector>
 #include <queue>
 #include <iostream>
-#include "../utils.h"
 using namespace std;
+
+// g++ 1020.cpp -std=c++17 -o 1020 && ./1020
 
 class Solution {
 public:
@@ -60,7 +61,7 @@ public:
                 q.push({r, c - 1});
             }
         }
-        
+
         return;
     }
 
