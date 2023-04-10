@@ -2,6 +2,10 @@
 #include "../BinaryTree.h"
 using namespace std;
 
+/*
+g++ 112.cpp ../BinaryTree.cpp -std=c++17 -o 112 && ./112
+*/
+
 class Solution {
 public:
 
