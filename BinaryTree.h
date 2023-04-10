@@ -9,6 +9,8 @@ public:
     TreeNode();
     TreeNode(int x);
     TreeNode(int x, TreeNode *left, TreeNode *right);
+
+    void printInorder(TreeNode* root);
 };
 
 #endif
