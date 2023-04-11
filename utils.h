@@ -4,6 +4,7 @@
 using namespace std;
 
 void printVector(const vector<int> & vec);
+void printVector(const vector<string> & vec);
 void print2dVector(const vector<vector<int>> & vec);
 
 #endif
