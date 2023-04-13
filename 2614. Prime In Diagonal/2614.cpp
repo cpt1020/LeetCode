@@ -3,6 +3,10 @@
 #include <cmath>
 using namespace std;
 
+/*
+g++ 2614.cpp -std=c++17 -o 2614 && ./2614
+*/
+
 class Solution {
 
     bool isPrime(int num) {
