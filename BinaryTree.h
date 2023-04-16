@@ -13,4 +13,6 @@ public:
     void printInorder(TreeNode* root);
 };
 
+void levelOrder(TreeNode* root);
+
 #endif
