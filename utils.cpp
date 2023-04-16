@@ -10,6 +10,13 @@ void printVector(const vector<int> & vec){
     cout << endl;
 }
 
+void printVector(const vector<long long> & vec){
+    for (auto & num: vec){
+        cout << num << " ";
+    }
+    cout << endl;
+}
+
 void printVector(const vector<string> & vec){
     for (auto & str: vec){
         cout << str << " ";
