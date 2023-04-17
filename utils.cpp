@@ -24,6 +24,13 @@ void printVector(const vector<string> & vec){
     cout << endl;
 }
 
+void printVector(const vector<bool> & vec) {
+    for (bool res: vec){
+        cout << boolalpha << res << " ";
+    }
+    cout << endl;
+}
+
 void print2dVector(const vector<vector<int>> & vec){
     for (auto & row: vec){
         for (auto & num: row){
