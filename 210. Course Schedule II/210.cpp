@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 #include "../utils.h"
 using namespace std;
 
@@ -35,7 +36,7 @@ private:
 
 public:
 
-    vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
+    vector<int> findOrder_DFS(int numCourses, vector<vector<int>>& prerequisites) {
         if (prerequisites.size() == 0) {
             vector<int> ans;
             for (int i {0}; i < numCourses; ++i) {
@@ -65,22 +66,71 @@ public:
         
         return ans;
     }
+
+    vector<int> findOrder_BFS(int numCourses, vector<vector<int>>& prerequisites) {
+        if (prerequisites.size() == 0) {
+            vector<int> ans;
+            for (int i {0}; i < numCourses; ++i) {
+                ans.push_back(i);
+            }
+            return ans;
+        }
+
+        vector<vector<int>> graph (numCourses);
+        for (auto& vec: prerequisites) {
+            graph.at(vec.at(0)).push_back(vec.at(1));
+        }
+        
+        unordered_map<int, int> in_degree;
+        for (auto& vec: prerequisites) {
+            in_degree[vec.at(1)] += 1;
+        }
+
+        vector<int> ans;
+        
+        for (int i {0}; i < numCourses; ++i) {
+            int j {0};
+            for (; j < numCourses; ++j) {
+                if (in_degree[j] == 0) {
+                    ans.push_back(j);
+                    break;
+                }
+            }
+
+            if (j == numCourses) {
+                return {};
+            }
+
+            in_degree[j] -= 1;
+
+            for (auto n: graph.at(j)) {
+                in_degree[n] -= 1;
+            }
+        }
+
+        reverse(ans.begin(), ans.end());
+        return ans;
+    }
 };
 
 int main() {
 
     Solution sol;
     vector<vector<int>> prerequisites {{1,0}};
-    printVector(sol.findOrder(2, prerequisites));
+    printVector(sol.findOrder_DFS(2, prerequisites));
+    printVector(sol.findOrder_BFS(2, prerequisites));
 
     prerequisites = {{1,0},{2,0},{3,1},{3,2}};
-    printVector(sol.findOrder(4, prerequisites));
+    printVector(sol.findOrder_DFS(4, prerequisites));
+    printVector(sol.findOrder_BFS(4, prerequisites));
 
     prerequisites = {};
-    printVector(sol.findOrder(1, prerequisites));
+    printVector(sol.findOrder_DFS(1, prerequisites));
+    printVector(sol.findOrder_BFS(1, prerequisites));
 
     prerequisites = {{0,1}};
-    printVector(sol.findOrder(2, prerequisites));
+    printVector(sol.findOrder_DFS(2, prerequisites));
+    printVector(sol.findOrder_BFS(2, prerequisites));
 
     return 0;
 }
