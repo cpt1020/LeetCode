@@ -53,14 +53,12 @@ public:
         vector<int> color (numCourses, 0);
 
         for (int i {0}; i < graph.size(); ++i) {
-            if (graph.size() != 0) {
-                if (detectCycleDFS(graph, color, ans, i) == true) {
-                    return {};
-                }
-                else {
-                    if (find(ans.begin(), ans.end(), i) == ans.end()) {
-                        ans.push_back(i);
-                    }
+            if (detectCycleDFS(graph, color, ans, i) == true) {
+                return {};
+            }
+            else {
+                if (find(ans.begin(), ans.end(), i) == ans.end()) {
+                    ans.push_back(i);
                 }
             }
         }
