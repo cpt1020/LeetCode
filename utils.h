@@ -12,10 +12,11 @@ void print2dVector(const vector<vector<int>> & vec);
 
 template <typename T>
 void printVector(const vector<T>& vec) {
+    cout << "[ ";
     for (auto val: vec) {
         cout << val << " ";
     }
-    cout << endl;
+    cout << "]" << endl;
 }
 
 template <typename T>
