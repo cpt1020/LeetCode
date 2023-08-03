@@ -2,6 +2,10 @@
 #include <vector>
 using namespace std;
 
+/*
+g++ 55.cpp -std=c++17 -o 55 && ./55
+*/
+
 class Solution {
 public:
     bool canJump(vector<int>& nums) {
