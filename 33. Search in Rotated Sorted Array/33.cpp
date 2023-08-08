@@ -2,38 +2,45 @@
 #include <iostream>
 using namespace std;
 
+/*
+g++ 33.cpp -std=c++17 -o 33 && ./33
+*/
+
 int search(vector<int>& nums, int target) {
+    int size = nums.size();
+    int left {0}, right {size - 1};
+    int middle {0};
 
-    int size {static_cast<int>(nums.size())};
-    int left {0};
-    int right {size - 1};
-    int middle {left + (right - left) / 2};
-    
-    while (left <= right){
+    while (left < right) {
+        middle = (left + right)/2;
 
-        if (nums.at(middle) == target){
-            return middle;
+        if (nums.at(middle) > nums.at(right)) {
+            left = middle + 1;
         }
-
-        if (nums.at(middle) >= nums.at(left)){
-            if (target >= nums.at(left) && target <= nums.at(middle)){
-                right = middle - 1;
-            }
-            else {
-                left = middle + 1;
-            }
+        else { // nums.at(middle) < nums.at(right)
+            right = middle;
         }
-        else{ // nums.at(middle) < nums.at(left)
-            if (target <= nums.at(right) && target >= nums.at(middle)){
-                left = middle + 1;
-            }
-            else {
-                right = middle - 1;
-            }
-        }
-
-        middle = left + (right - left) / 2;
     }
+
+    int rotate {left};
+    right = left + size - 1;
+    middle = 0;
+
+    while (left <= right) {
+        middle = (left + right)/2;
+
+        if (nums.at(middle % size) == target) {
+            return middle % size;
+        }
+
+        if (target < nums.at(middle % size)) {
+            right = middle - 1;
+        }
+        else {
+            left = middle + 1;
+        }
+    }
+
     return -1;
 }
 
