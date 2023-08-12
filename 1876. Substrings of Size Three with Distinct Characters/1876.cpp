@@ -2,6 +2,10 @@
 #include <vector>
 using namespace std;
 
+/*
+g++ 1876.cpp -std=c++17 -o 1876 && ./1876
+*/
+
 class Solution {
 public:
     int countGoodSubstrings(string s) {
@@ -11,8 +15,8 @@ public:
         }
 
         int alphabet [26] {0};
-        alphabet [s.at(0) - 'a'] += 1;
-        alphabet [s.at(1) - 'a'] += 1; 
+        alphabet[s.at(0) - 'a'] += 1;
+        alphabet[s.at(1) - 'a'] += 1; 
 
         int ans {0};
 
