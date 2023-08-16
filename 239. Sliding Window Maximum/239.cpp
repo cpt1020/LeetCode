@@ -5,7 +5,7 @@
 using namespace std;
 
 /*
-g++ 239.cpp -std=c++17 -o 239 && ./239
+g++ 239.cpp ../utils.cpp -std=c++17 -o 239 && ./239
 */
 
 auto comp1 = [](int &a, int &b) {
