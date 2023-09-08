@@ -1,5 +1,5 @@
-#ifndef LISTNODE_C_H
-#define LISTNODE_C_H
+#ifndef _LISTNODE_C_H_
+#define _LISTNODE_C_H_
 
 struct ListNode {
     int val;

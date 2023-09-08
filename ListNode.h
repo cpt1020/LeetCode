@@ -1,5 +1,5 @@
-#ifndef LISTNODE_H
-#define LISTNODE_H
+#ifndef _LISTNODE_H_
+#define _LISTNODE_H_
 #include <vector>
 using namespace std;
 
