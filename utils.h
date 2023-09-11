@@ -21,12 +21,15 @@ void printVector(const vector<T>& vec) {
 
 template <typename T>
 void print2dVector(const vector<vector<T>>& vec) {
-    for (auto v: vec) {
-        for (auto val: v) {
-            cout << val << " ";
+    cout << "[";
+    for (int i {0}; i < vec.size(); ++i) {
+        cout << "[";
+        for (int j {0}; j < vec.at(i).size(); ++j) {
+            cout << vec.at(i).at(j) << ((j == vec.at(i).size() - 1) ? "]" : ",");
         }
-        cout << endl;
+        cout << ((i == vec.size() - 1) ? "]" : ",");
     }
+    
     cout << endl;
 }
 
